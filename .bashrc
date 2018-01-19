@@ -10,10 +10,13 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Add a datestamp to every entry in the bash history.
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-# Share bash history across multiple sessions.
+# Make the history unlimited and write out after every command                                                                                                                                                     
+export HISTFILESIZE=
+export HISTSIZE=
 export HISTCONTROL=ignoredups:erasedups  
+export HISTFILE=~/.bash_eternal_history
 shopt -s histappend  
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+PROMPT_COMMAND='history -a;history -n'
 
 # Enable reverse history search.
 stty -ixon
