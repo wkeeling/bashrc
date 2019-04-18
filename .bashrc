@@ -27,3 +27,15 @@ export HISTCONTROL=ignoreboth:erasedups
 # Allow access to the clipboard through piping.
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+# Work around mis-spellings
+shopt -s cdspell
+
+# Move to folder if command doesn't exist
+shopt -s autocd
+
+# Perform any expansion of variables, tildes
+shopt -s direxpand
+
+# Display command before automatically running it
+shopt -s histverify
