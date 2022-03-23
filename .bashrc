@@ -2,7 +2,7 @@ export EDITOR=vim
 alias vi=vim
 
 # Add current git branch to bash prompt
-PS1="\e[1;31m\$(git branch 2>/dev/null | grep '^*' | colrm 1 2 | sed -r 's/(^.+$)/\1 /')\e[0m${PS1}"
+PS1="\[\e[1;31m\]\$(git branch 2>/dev/null | grep '^*' | colrm 1 2 | sed -r 's/(^.+$)/\1 /')\[\e[0m\]${PS1}"
 
 # Add a datestamp to every entry in the bash history.
 export HISTTIMEFORMAT="%d/%m/%y %T "
